@@ -8,7 +8,7 @@ export function zOn (componentSocketId, obj) {
         el.addEventListener(event, () => {
             const func = el.getAttribute('z-bind');
             let params = el.getAttribute('params');
-            params = escape(params);
+            params = _escape(params);
             params = params.replace(/&#39;/g, '"');
             params = JSON.parse(params);
             obj[func].apply(null, params);
