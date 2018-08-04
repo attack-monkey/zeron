@@ -1,0 +1,20 @@
+{
+  "name": "zeron",
+  "version": "1.0.0",
+  "description": "A lightweight functional frontend framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "lightweight",
+    "functional",
+    "frontend",
+    "framework"
+  ],
+  "author": {
+    "name": "attack-monkey",
+    "url": "https://github.com/attack-monkey"
+  },
+  "license": "ISC"
+}
