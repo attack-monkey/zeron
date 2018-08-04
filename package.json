@@ -1,8 +1,8 @@
 {
   "name": "zeron",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A lightweight functional frontend framework",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "test"
   },
@@ -16,5 +16,9 @@
     "name": "attack-monkey",
     "url": "https://github.com/attack-monkey"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/attack-monkey/zeron"
+  }
 }
