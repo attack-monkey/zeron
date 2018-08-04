@@ -1,4 +1,4 @@
-import { escape } from './escape.function';
+import { _escape } from './escape.function';
 import { forEach } from './for-each.function';
 
 export function zOn (componentSocketId, obj) {
