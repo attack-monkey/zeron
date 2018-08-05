@@ -8,6 +8,8 @@ import { getInput } from "./functions/get-input.function";
 import { zOn } from "./functions/z-on.function";
 import { reducers } from "./functions/reducers.function";
 import { _escape } from "./functions/escape.function";
+import { pushStateRoutes } from "./functions/push-state-routes.function";
+import { route } from "./functions/route.function";
 
 export const zeron = {
     component: component,
@@ -21,5 +23,7 @@ export const zeron = {
     getInput: getInput,
     escape: _escape,
     zOn: zOn,
-    reducers: reducers
+    reducers: reducers,
+    route: route,
+    pushStateRoutes: pushStateRoutes
 }
