@@ -1,6 +1,6 @@
 
-import { route } from 'zeron/functions/route.function';
-import { forEach } from 'zeron/functions/for-each.function';
+import { route } from './route.function';
+import { forEach } from './for-each.function';
 
 export function pushStateRoutes (componentSocketId) {
     const arr = document.querySelectorAll('#' + componentSocketId + ' zeron-a');
