@@ -10,6 +10,7 @@ import { reducers } from "./functions/reducers.function";
 import { _escape } from "./functions/escape.function";
 import { pushStateRoutes } from "./functions/push-state-routes.function";
 import { route } from "./functions/route.function";
+import { urlSegments } from "./functions/url-segments.function";
 
 export const zeron = {
     component: component,
@@ -25,5 +26,6 @@ export const zeron = {
     zOn: zOn,
     reducers: reducers,
     route: route,
-    pushStateRoutes: pushStateRoutes
+    pushStateRoutes: pushStateRoutes,
+    urlSegments: urlSegments
 }

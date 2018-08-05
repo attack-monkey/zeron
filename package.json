@@ -1,6 +1,6 @@
 {
   "name": "zeron",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A lightweight functional frontend framework",
   "main": "index.ts",
   "scripts": {
