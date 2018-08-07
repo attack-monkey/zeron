@@ -25,12 +25,13 @@ npm i -g parcel
 
 ```
 
-In your package - add the start script
+In your package - add the start script and build script
 
 ```json
 
 "scripts" : {
     "start": "parcel index.html",
+    "build": "parcel build index.html --public-url /",
     ...
 }
 
@@ -49,6 +50,14 @@ To run Zeron locally ...
 ```
 
 npm start
+
+```
+
+To build ...
+
+```
+
+npm build
 
 ```
 
