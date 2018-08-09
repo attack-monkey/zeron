@@ -1,3 +1,5 @@
+import { debug } from "./debug.function";
+
 let storeStore = [];
 let maxLengthStore = Infinity;
 
@@ -8,7 +10,11 @@ export function store() {
             storeStore.unshift(newState);
             if (storeStore.length > maxLengthStore) {
                 storeStore.length = maxLengthStore;
-            } 
+            }
+            if (debug().isOn()) {
+                debug().log('Unshifting new state into Store...');
+                debug().log('Store: ', storeStore);
+            }
         },
         maxLength: newMaxLength => maxLengthStore = newMaxLength
     }
