@@ -1,7 +1,7 @@
 # Zeron
-A lightweight functional frontend framework
+A lightweight functional / reactive frontend framework
 
-- Zeron encourages functional programming over oo to reduce state related complexity
+- Zeron encourages functional and reactive programming over oo to reduce state related complexity
 - State is only stored in one place
 - State is immutable - so rather than mutating state, any new state is put on top of an 'undo stack'
 - Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
