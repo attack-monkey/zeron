@@ -11,6 +11,7 @@
 - on
 - $
 - getParams
+- onRouteChange
 
 ## Major Changes
 

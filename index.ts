@@ -11,6 +11,7 @@ import { urlSegments } from "./functions/url-segments.function";
 import { debug } from './functions/debug.function';
 import { $ } from "./functions/$.function";
 import { on } from "./functions/on.function";
+import { onRouteChange } from "./functions/on-route-change.function";
 
 export const zeron = {
     component: component,
@@ -27,5 +28,6 @@ export const zeron = {
     urlSegments: urlSegments,
     debug: debug,
     $: $,
-    on: on
+    on: on,
+    onRouteChange: onRouteChange
 }

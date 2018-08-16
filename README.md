@@ -1,7 +1,7 @@
 # Zeron
-A lightweight functional / reactive frontend framework
+A lightweight functional frontend framework
 
-- Zeron encourages functional and reactive programming over oo to reduce state related complexity
+- Zeron encourages functional programming over oo to reduce state related complexity
 - State is only stored in one place
 - State is immutable - so rather than mutating state, any new state is put on top of an 'undo stack'
 - Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
@@ -25,13 +25,12 @@ npm i -g parcel
 
 ```
 
-In your package - add the start script and build script
+In your package - add the start script
 
 ```json
 
 "scripts" : {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url /",
     ...
 }
 
@@ -50,14 +49,6 @@ To run Zeron locally ...
 ```
 
 npm start
-
-```
-
-To build ...
-
-```
-
-npm build
 
 ```
 
@@ -92,11 +83,16 @@ When the button is pushed, the greeting changes.
 
 ```javascript
 
-import { zeron } from 'zeron';
+import { state, getState } from "zeron/functions/store.function";
+import { component } from "zeron/functions/component.function";
+import { on } from "zeron/functions/on.function";
+import { getParams } from "zeron/functions/get-params.function";
+import { $ } from "zeron/functions/$.function";
+import { iu } from "zeron/functions/iu.functions";
 
 // set initial state
 
-zeron.state().set({
+state().set({
     greeting: 'hello world'
 });
 
@@ -108,26 +104,39 @@ function run() {
 
     // load the #entry-socket node with html
 
-    zeron.component(
-        document.querySelector('#entry-socket'),
+    component(
+        $('#entry-socket'),
         `<div id='hello-world-component'>
-            <h1>${zeron.getState().greeting}<h2>
-            <button z-on="click" z-bind="changeGreeting" params="['yo earth']">push me</button>
+            <h1>${getState().greeting}<h2>
+            <button id="a-button" data-params="['yo earth']">push me</button>
         </div>`
     );
 
     // bind the changeGreeting function to the dom
 
-    zeron.zOn('hello-world-component', {
-        changeGreeting: (newGreeting) => {
+    on($('#a-button'), 'click', () => {
 
-            // Save the new state
-            zeron.state().set({ greeting: newGreeting });
+            // extract the new greeting from data-params of #a-button
+
+            const newGreeting = getParams($('#a-button'));
+
+            // Store holds not only the current state, but also previous states.
+            // State doesn't change, but instead new state objects are 'unshifted' to the front of Store's 'undo' stack
+            // state().set() adds the new state to the front of the 'undo' stack.
+
+            state().set(
+
+                // immutably produce a new state object, by passing in the original state, 
+                // the key that you want to change, and the new value
+
+                iu(getState(), 'greeting', newGreeting)
+            );
 
             // rerun the app
+
             run();
         }
-    });
+    );
 }
 
 ```
