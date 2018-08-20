@@ -1,7 +1,7 @@
 import { debug } from "./debug.function";
 
 let storeStore = [];
-let maxLengthStore = Infinity;
+let maxLengthStore = 5;
 
 export function store() {
     return {
@@ -12,8 +12,7 @@ export function store() {
                 storeStore.length = maxLengthStore;
             }
             if (debug().isOn()) {
-                debug().log('Unshifting new state into Store...');
-                debug().log('Store: ', storeStore);
+                logStorage();
             }
         },
         maxLength: newMaxLength => maxLengthStore = newMaxLength
@@ -28,5 +27,16 @@ export function state() {
     return {
         get: () => getState(),
         set: (newState) => store().unshift(newState)
+    }
+}
+
+function logStorage() {
+    if (debug().getOptions().logFullStore) {
+        debug().log('Unshifting new state into Store...');
+        debug().log('Store: ', storeStore);
+    } else if (debug().getOptions().onlyLogCurrentState) {
+        debug().log('Unshifting new state into Store...');
+        debug().log('Logging new state...');
+        debug().log('State: ', storeStore[0]);
     }
 }
