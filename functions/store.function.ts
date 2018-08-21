@@ -5,7 +5,7 @@ let maxLengthStore = 5;
 
 export function store() {
     return {
-        get: () => { return storeStore } ,
+        get: () => { return JSON.parse(JSON.stringify(storeStore)); } ,
         unshift: newState => { 
             storeStore.unshift(newState);
             if (storeStore.length > maxLengthStore) {
@@ -20,7 +20,7 @@ export function store() {
 }
 
 export function getState() {
-    return storeStore[0];
+    return JSON.parse(JSON.stringify(storeStore[0]));
 }
 
 export function state() {
