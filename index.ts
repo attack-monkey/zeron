@@ -12,6 +12,7 @@ import { debug } from './functions/debug.function';
 import { $ } from "./functions/$.function";
 import { on } from "./functions/on.function";
 import { onRouteChange } from "./functions/on-route-change.function";
+import { engine } from "./functions/engine.function";
 
 export const zeron = {
     component: component,
@@ -29,5 +30,6 @@ export const zeron = {
     debug: debug,
     $: $,
     on: on,
-    onRouteChange: onRouteChange
+    onRouteChange: onRouteChange,
+    engine: engine
 }
