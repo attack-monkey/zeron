@@ -19,13 +19,15 @@ export function store() {
     }
 }
 
-export function getState() {
-    return JSON.parse(JSON.stringify(storeStore[0]));
+export function getState(node?) {
+    return node ? 
+        getStateAtNode(node) :
+        JSON.parse(JSON.stringify(storeStore[0]));
 }
 
 export function state() {
     return {
-        get: () => getState(),
+        get: (node?) => getState(node),
         set: (newState) => store().unshift(newState)
     }
 }
@@ -39,4 +41,14 @@ function logStorage() {
         debug().log('Logging new state...');
         debug().log('State: ', storeStore[0]);
     }
+}
+
+function getStateAtNode(node) {
+    const nodes = node.split('/');
+    return nodes.reduce((ac, cv) => {
+        try {
+            return ac[cv];
+        }
+        catch (e) { return undefined; }
+    }, getState());
 }
