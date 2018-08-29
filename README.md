@@ -56,6 +56,10 @@ npm start
 
 OR
 
+## [Start from Seed](https://github.com/attack-monkey/zeron-seed)
+
+OR
+
 ## Try this very basic Zeron app ...
 
 This basic app shows a hello world message and a button.  
