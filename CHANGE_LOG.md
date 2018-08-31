@@ -1,3 +1,15 @@
+# 2.4.0
+
+## Added
+
+- pushStateTransitions for animated transitions between pages (docs are coming)
+
+## Fixes
+
+- Object.assign polyfill for ie
+- Cursor applied to pushState route links and pushState transition links
+
+
 # 2.1.0
 
 ## Added

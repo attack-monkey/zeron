@@ -1,4 +1,8 @@
 import { debug } from "./debug.function";
+import { loadPolyfills } from "../polyfills/load-polyfills.function";
+
+// As this is one of the first functions that gets called in a Zeron app, we load any necessary polyfills here
+loadPolyfills();
 
 let storeStore = [];
 let maxLengthStore = 5;

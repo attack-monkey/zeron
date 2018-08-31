@@ -13,6 +13,7 @@ import { $ } from "./functions/$.function";
 import { on } from "./functions/on.function";
 import { onRouteChange } from "./functions/on-route-change.function";
 import { engine } from "./functions/engine.function";
+import { pushStateTransitions } from "./functions/push-state-transitions.function";
 
 export const zeron = {
     component: component,
@@ -26,6 +27,7 @@ export const zeron = {
     escape: _escape,
     route: route,
     pushStateRoutes: pushStateRoutes,
+    pushStateTransitions: pushStateTransitions,
     urlSegments: urlSegments,
     debug: debug,
     $: $,
