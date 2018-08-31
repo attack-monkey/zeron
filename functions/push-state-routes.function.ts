@@ -1,4 +1,3 @@
-
 import { route } from './route.function';
 import { forEach } from './for-each.function';
 
