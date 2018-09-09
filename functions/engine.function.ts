@@ -1,11 +1,13 @@
 import { state, getState } from "./store.function";
 import { iu } from "./iu.functions";
 
+const singleton = {
+    start: (substate, engineFunction, args?) => engineStart(substate, engineFunction, args),
+    stop: substate => engineStop(substate)
+};
+
 export function engine() {
-    return {
-        start: (substate, engineFunction, args?) => engineStart(substate, engineFunction, args),
-        stop: substate => engineStop(substate)
-    };
+    return singleton;
 }
 
 function engineStop(substate): void {
