@@ -52,7 +52,7 @@ npm start
 
 ```
 
-## [Over to the Docs](https://github.com/attack-monkey/zeron/wiki)
+## [Over to the Docs](https://github.com/attack-monkey/zeron/wiki/Docs)
 
 OR
 
