@@ -1,3 +1,49 @@
+# 2.5.0
+
+## New
+
+- All functions can now be called directly from `/zeron`
+
+eg.
+
+```
+
+import { component, $, urlSegments, debug, pushStateTransitions } from 'zeron';
+
+```
+
+> Any new functions will be accessible via the above method
+
+## Added
+
+- state().update()
+- setState()
+- updateState()
+
+Previously there were only `state().set()` and `state().get()` as well as the convenience function `getState()` (an alias for `state().get()`).
+
+Following the same syntax, `state().set()` now has the convenience function `setState()`.
+
+`state().update()` and `updateState()` have been added to the api to allow node level updates. Rather than having to set the whole state, `updateState()` takes a node and a value. The node is where in the state you want to update. This is equivalent to:
+
+```
+
+state().set(
+    iu(state().get(), 'path/to/node', newValue)
+);
+
+```
+
+and can now be written as 
+
+```
+
+updateState('path/to/node', newValue);
+
+```
+
+`state().update()` makes use of `iu` immutable update under the hood, and `state().set()`. This allows an immutable change to occur, which is then unshifted to the Store - leaving the previous state unchanged.
+
 # 2.4.0
 
 ## Added

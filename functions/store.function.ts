@@ -1,5 +1,6 @@
 import { debug } from "./debug.function";
 import { loadPolyfills } from "../polyfills/load-polyfills.function";
+import { iu } from "./iu.functions";
 
 // As this is one of the first functions that gets called in a Zeron app, we load any necessary polyfills here
 loadPolyfills();
@@ -29,10 +30,15 @@ export function getState(node?) {
         JSON.parse(JSON.stringify(storeStore[0]));
 }
 
+export const setState = newState => state().set(newState);
+
+export const updateState = (node, newState) => state().update(node, newState);
+
 export function state() {
     return {
         get: (node?) => getState(node),
-        set: (newState) => store().unshift(newState)
+        set: (newState) => store().unshift(newState),
+        update: (node, newState) => store().unshift(iu(getState(), node, newState))
     }
 }
 

@@ -87,16 +87,11 @@ When the button is pushed, the greeting changes.
 
 ```javascript
 
-import { state, getState } from "zeron/functions/store.function";
-import { component } from "zeron/functions/component.function";
-import { on } from "zeron/functions/on.function";
-import { getParams } from "zeron/functions/get-params.function";
-import { $ } from "zeron/functions/$.function";
-import { iu } from "zeron/functions/iu.functions";
+import { state, getState, component, on, getParams, $, iu } from 'zeron';
 
 // set initial state
 
-state().set({
+setState({
     greeting: 'hello world'
 });
 
@@ -111,7 +106,7 @@ function run() {
     component(
         $('#entry-socket'),
         `<div id='hello-world-component'>
-            <h1>${getState().greeting}<h2>
+            <h1>${getState('greeting')}<h2>
             <button id="a-button" data-params="['yo earth']">push me</button>
         </div>`
     );
@@ -126,15 +121,9 @@ function run() {
 
             // Store holds not only the current state, but also previous states.
             // State doesn't change, but instead new state objects are 'unshifted' to the front of Store's 'undo' stack
-            // state().set() adds the new state to the front of the 'undo' stack.
+            // updateState() makes a change to the 'greeting' node and the new state is unshifted to the front of the 'undo' stack.
 
-            state().set(
-
-                // immutably produce a new state object, by passing in the original state, 
-                // the key that you want to change, and the new value
-
-                iu(getState(), 'greeting', newGreeting)
-            );
+            updateState('greeting', newGreeting);
 
             // rerun the app
 

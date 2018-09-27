@@ -37,3 +37,21 @@ export const zeron = {
     engine: engine,
     transitions: transitions
 }
+
+export * from './functions/component.function';
+export * from './functions/get-unique-id.function';
+export * from './functions/store.function';
+export * from './functions/iu.functions';
+export * from './functions/for-each.function';
+export * from './functions/get-input.function';
+export * from './functions/escape.function';
+export * from './functions/route.function';
+export * from './functions/push-state-routes.function';
+export * from './functions/url-segments.function';
+export * from './functions/debug.function';
+export * from './functions/$.function';
+export * from './functions/on.function';
+export * from './functions/on-route-change.function';
+export * from './functions/engine.function';
+export * from './functions/push-state-transitions.function';
+export * from './functions/transitions.function';
