@@ -31,6 +31,7 @@ In your package - add the start script
 
 "scripts" : {
     "start": "parcel index.html",
+    "build": "parcel build index.html --public-url /"
     ...
 }
 
@@ -87,7 +88,7 @@ When the button is pushed, the greeting changes.
 
 ```javascript
 
-import { state, getState, component, on, getParams, $, iu } from 'zeron';
+import { setState, updateState, getState, component, on, getParams, $ } from 'zeron';
 
 // set initial state
 

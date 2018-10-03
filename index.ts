@@ -1,9 +1,10 @@
 import { component } from "./functions/component.function";
 import { genId } from "./functions/get-unique-id.function";
-import { store, state, getState } from "./functions/store.function";
+import { store, state, getState, setState, updateState } from "./functions/store.function";
 import { iu } from "./functions/iu.functions";
 import { forEach } from "./functions/for-each.function";
 import { getInput } from "./functions/get-input.function";
+import { getParams } from "./functions/get-params.function";
 import { _escape } from "./functions/escape.function";
 import { route } from "./functions/route.function";
 import { pushStateRoutes } from "./functions/push-state-routes.function";
@@ -22,9 +23,12 @@ export const zeron = {
     store: store,
     state: state,
     getState: getState,
+    setState: setState,
+    updateState: updateState,
     iu: iu,
     forEach: forEach,
     getInput: getInput,
+    getParams: getParams,
     escape: _escape,
     route: route,
     pushStateRoutes: pushStateRoutes,
@@ -44,6 +48,7 @@ export * from './functions/store.function';
 export * from './functions/iu.functions';
 export * from './functions/for-each.function';
 export * from './functions/get-input.function';
+export * from './functions/get-params.function';
 export * from './functions/escape.function';
 export * from './functions/route.function';
 export * from './functions/push-state-routes.function';
