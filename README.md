@@ -1,11 +1,10 @@
 # Zeron
 A lightweight functional frontend framework
 
+- Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
 - Zeron encourages functional programming over oo to reduce state related complexity
 - State is only stored in one place
 - State is immutable - so rather than mutating state, any new state is put on top of an 'undo stack'
-- Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
-- Zeron uses parcel.js as it's bundler of choice - due to it's simple out of the box power.
 
 ## Get started
 
@@ -18,6 +17,8 @@ npm init
 ```
 
 Install parcel globally to use parcel from the CLI
+
+> Zeron uses parcel.js as it's bundler of choice - due to it's simple out of the box power.
 
 ```
 
