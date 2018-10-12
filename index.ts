@@ -13,7 +13,6 @@ import { debug } from './functions/debug.function';
 import { $ } from "./functions/$.function";
 import { on } from "./functions/on.function";
 import { onRouteChange } from "./functions/on-route-change.function";
-import { engine } from "./functions/engine.function";
 import { pushStateTransitions } from "./functions/push-state-transitions.function";
 import { transitions } from "./functions/transitions.function";
 
@@ -38,7 +37,6 @@ export const zeron = {
     $: $,
     on: on,
     onRouteChange: onRouteChange,
-    engine: engine,
     transitions: transitions
 }
 
@@ -57,6 +55,5 @@ export * from './functions/debug.function';
 export * from './functions/$.function';
 export * from './functions/on.function';
 export * from './functions/on-route-change.function';
-export * from './functions/engine.function';
 export * from './functions/push-state-transitions.function';
 export * from './functions/transitions.function';
