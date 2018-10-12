@@ -13,11 +13,15 @@ export function debug() {
     return {
         log: (...args) => debuggerx ? console.log(...args) : undefined,
         on: (options?: OptionsModel) => {
-					console.log('Zeron Debugger is On');
+					console.log('Debugger is On');
                     debuggerx = true
                     optionsStore.logFullStore = islogFullStoreOn(options);
                     optionsStore.onlyLogCurrentState = islogCurrentStateOn(options);
-				},
+                },
+        off: () => {
+            console.log('Debugger is Off');
+            debuggerx = false
+        },
         isOn: () => debuggerx,
         getOptions: () => optionsStore
     }

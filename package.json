@@ -1,11 +1,39 @@
 {
-  "name": "zeron",
-  "version": "2.5.1",
-  "description": "A lightweight functional / reactive frontend framework",
-  "main": "index.ts",
-  "scripts": {
-    "test": "test"
+  "_from": "zeron",
+  "_id": "zeron@2.5.2",
+  "_inBundle": false,
+  "_integrity": "sha512-2N2c1sbduEQAaFLafDzbwyI6CMr7EB7WPZeH6AhjOyEyyBoJOy/JiLV+tj2dcAs/ai1si+VZN6LZmXBs13yUYA==",
+  "_location": "/zeron",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "zeron",
+    "name": "zeron",
+    "escapedName": "zeron",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/zeron/-/zeron-2.5.2.tgz",
+  "_shasum": "bbecc376758dcff7f898ad98bc1b12c0ec09790f",
+  "_spec": "zeron",
+  "_where": "/Users/benjaminclark/Sites/zeron-test",
+  "author": {
+    "name": "attack-monkey",
+    "url": "https://github.com/attack-monkey"
+  },
+  "bugs": {
+    "url": "https://github.com/attack-monkey/zeron/issues"
+  },
+  "bundleDependencies": [],
+  "deprecated": false,
+  "description": "A lightweight functional / reactive frontend framework",
+  "homepage": "https://github.com/attack-monkey/zeron#readme",
   "keywords": [
     "lightweight",
     "functional",
@@ -13,13 +41,15 @@
     "frontend",
     "framework"
   ],
-  "author": {
-    "name": "attack-monkey",
-    "url": "https://github.com/attack-monkey"
-  },
   "license": "ISC",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/attack-monkey/zeron"
-  }
+  "main": "index.ts",
+  "name": "zeron",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attack-monkey/zeron.git"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "version": "2.5.2"
 }

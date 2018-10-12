@@ -1,11 +1,11 @@
 # Zeron
 A lightweight functional frontend framework
 
+- Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
 - Zeron encourages functional programming over oo to reduce state related complexity
+- Zeron utilizes *shadow components* for a smarter, faster DOM.
 - State is only stored in one place
 - State is immutable - so rather than mutating state, any new state is put on top of an 'undo stack'
-- Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
-- Zeron uses parcel.js as it's bundler of choice - due to it's simple out of the box power.
 
 ## Get started
 
@@ -18,6 +18,8 @@ npm init
 ```
 
 Install parcel globally to use parcel from the CLI
+
+> Zeron uses parcel.js as it's bundler of choice - due to it's simple out of the box power.
 
 ```
 
@@ -75,8 +77,8 @@ When the button is pushed, the greeting changes.
         <title>My Zeron project</title>
     </head>
     <body>
-        <!-- Your application's first component-socket -->
-        <div id="entry-socket"></div>
+        <!-- Your application's first component -->
+        <div id="entry"></div>
         
         <!-- Call index.ts to boot up your javascript / typescript -->
         <script src="./index.ts"></script>
@@ -88,7 +90,7 @@ When the button is pushed, the greeting changes.
 
 ```javascript
 
-import { setState, updateState, getState, component, on, getParams, $ } from 'zeron';
+import { setState, updateState, getState, component } from 'zeron';
 
 // set initial state
 
@@ -101,36 +103,25 @@ setState({
 run();
 
 function run() {
-
-    // load the #entry-socket node with html
-
     component(
-        $('#entry-socket'),
-        `<div id='hello-world-component'>
-            <h1>${getState('greeting')}<h2>
-            <button id="a-button" data-params="['yo earth']">push me</button>
-        </div>`
+        'entry' /* load into #entry node */,
+        `
+        <h1>${getState('greeting')}<h2>
+        <!-- data-on binds events to the onRender methods below, passing in data-params -->
+        <button data-on="{'click': 'changeGreeting' }" data-params="{'newGreeting': 'Yo Earth!!'}">
+            push me
+        </button>
+        <!-- data-on binds events to the onRender methods below, passing in data-params -->
+        <button id="anotherid" data-on="{'click': 'changeGreeting' }" data-params="{'newGreeting': 'hello world'}">
+            push me
+        </button>`,
+        { onRender: { changeGreeting: changeGreeting } }
     );
 
-    // bind the changeGreeting function to the dom
-
-    on($('#a-button'), 'click', () => {
-
-            // extract the new greeting from data-params of #a-button
-
-            const newGreeting = getParams($('#a-button'));
-
-            // Store holds not only the current state, but also previous states.
-            // State doesn't change, but instead new state objects are 'unshifted' to the front of Store's 'undo' stack
-            // updateState() makes a change to the 'greeting' node and the new state is unshifted to the front of the 'undo' stack.
-
-            updateState('greeting', newGreeting);
-
-            // rerun the app
-
-            run();
-        }
-    );
+    function changeGreeting(params) {
+        updateState('greeting', params.newGreeting);
+        run(); /* Reload the component */
+    }
 }
 
 ```
