@@ -1,6 +1,6 @@
 {
   "_from": "zeron",
-  "_id": "zeron@2.5.2",
+  "_id": "zeron@3.0.0",
   "_inBundle": false,
   "_integrity": "sha512-2N2c1sbduEQAaFLafDzbwyI6CMr7EB7WPZeH6AhjOyEyyBoJOy/JiLV+tj2dcAs/ai1si+VZN6LZmXBs13yUYA==",
   "_location": "/zeron",
@@ -51,5 +51,5 @@
   "scripts": {
     "test": "test"
   },
-  "version": "2.5.2"
+  "version": "3.0.0"
 }
