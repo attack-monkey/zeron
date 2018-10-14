@@ -1,13 +1,19 @@
-import { $ } from "zeron/functions/$.function";
-import { forEach } from "zeron/functions/for-each.function";
-import { getParams } from "zeron/functions/get-params.function";
+import { $ } from "./$.function";
+import { forEach } from "./for-each.function";
+import { getParams } from "./get-params.function";
+import { pushStateRoutes } from "./push-state-routes.function";
+import { pushStateTransitions } from "./push-state-transitions.function";
 
 let shadowComponentMap = {};
 
 interface ComponentOptionsModel {
     onlyRunIf?: boolean,
-    onSocketConfirmation?: () => any,
-    onRender?: any
+    next?: () => any,
+    bind?: any
+}
+
+export function clearComponent(componentSocketId) {
+    shadowComponentMap[componentSocketId] = undefined;
 }
 
 export function component(componentSocketId, template: string, options?: ComponentOptionsModel) {
@@ -18,21 +24,24 @@ export function component(componentSocketId, template: string, options?: Compone
                 // Either there is no prior shadowComponent set OR the template doesn't match the existing shadowComponent
                 // So save the new shadowComponent and inject the template into the componentSocket
                 shadowComponentMap[componentSocketId] = template;
-                run($('#' + componentSocketId), template, options);
+                run(componentSocketId, template, options);
             }
         }
-        if (options && options.onSocketConfirmation) {
-            options.onSocketConfirmation();
+        if (options && options.next) {
+            options.next();
         }
     }
 }
 
-function run(componentSocket, template, options?: any){
+function run(componentSocketId, template, options?: any){
     // Attach the template to the innerHTML of the component-socket
-    componentSocket.innerHTML = template;
+    $('#' + componentSocketId).innerHTML = template;
+    // Attach pushState routes
+    pushStateRoutes(componentSocketId);
+    pushStateTransitions(componentSocketId);
     // On (re)render - do the stuff
     if (options && options.onRender) {
-        const nodeList = document.querySelectorAll(':scope #' + componentSocket.id + ' [data-on]');
+        const nodeList = document.querySelectorAll(':scope #' + componentSocketId + ' [data-on]');
         forEach(nodeList, node => {
             const funcObj = parseDataOn(node);
             const params = getParams(node);

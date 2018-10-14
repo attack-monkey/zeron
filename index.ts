@@ -1,4 +1,4 @@
-import { component } from "./functions/component.function";
+import { component, clearComponent } from "./functions/component.function";
 import { genId } from "./functions/get-unique-id.function";
 import { store, state, getState, setState, updateState } from "./functions/store.function";
 import { iu } from "./functions/iu.functions";
@@ -37,7 +37,8 @@ export const zeron = {
     $: $,
     on: on,
     onRouteChange: onRouteChange,
-    transitions: transitions
+    transitions: transitions,
+    clearComponent: clearComponent
 }
 
 export * from './functions/component.function';

@@ -1,28 +1,28 @@
 {
-  "_from": "zeron",
+  "_from": "zeron@3.0.0",
   "_id": "zeron@3.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-2N2c1sbduEQAaFLafDzbwyI6CMr7EB7WPZeH6AhjOyEyyBoJOy/JiLV+tj2dcAs/ai1si+VZN6LZmXBs13yUYA==",
+  "_integrity": "sha512-HNuipInZ2AmZPq+0pjcf1zTqynsOkCINMdxZhLvN88M1KoP5mA+ppBYwWD4/wCF4g90RFySfuzLRANjJhk0gWA==",
   "_location": "/zeron",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "zeron",
+    "raw": "zeron@3.0.0",
     "name": "zeron",
     "escapedName": "zeron",
-    "rawSpec": "",
+    "rawSpec": "3.0.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "3.0.0"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/zeron/-/zeron-2.5.2.tgz",
-  "_shasum": "bbecc376758dcff7f898ad98bc1b12c0ec09790f",
-  "_spec": "zeron",
-  "_where": "/Users/benjaminclark/Sites/zeron-test",
+  "_resolved": "https://registry.npmjs.org/zeron/-/zeron-3.0.0.tgz",
+  "_shasum": "be347c9f3621e7e70159607ea6da27566cb1dc0c",
+  "_spec": "zeron@3.0.0",
+  "_where": "/Users/benjaminclark/Sites/zeron-seed",
   "author": {
     "name": "attack-monkey",
     "url": "https://github.com/attack-monkey"

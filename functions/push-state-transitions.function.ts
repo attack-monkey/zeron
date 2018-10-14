@@ -11,7 +11,7 @@ export function pushStateTransitions (componentSocketId) {
             if (path !== window.location.pathname) {
                 try {
                     const transitionData = JSON.parse(el.getAttribute('data-transition'));
-                    const transition: (path: string, data: any) => any = transitions().get(transitionData.type);
+                    const transition = transitions().get(transitionData.type);
                     transition(path, transitionData);
                 } catch (e) {
                     console.error('Transition failed - most likely due to misconfigured data-transition data');
