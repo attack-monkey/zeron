@@ -5,7 +5,7 @@ It still utilizes pure javaScript `${templates}` instead of proprietry template 
 Zeron3 simply gets simpler around a few core concepts.
 
 Zeron has until now had a heavy reliance on DOM ids, creating some complexity when building large applications.
-Zeron3 doesn't have a reliance on DOM ids and instead opts for 'data-on' and 'data-params' attributes in the html.
+Zeron3 doesn't have a reliance on DOM ids (within components) and instead opts for 'data-on' and 'data-params' attributes in the html.
 These attributes map events to functions when a component renders.
  
 Zeron3 introduces 'shadow components' which utilises a *shadow dom* concept.
