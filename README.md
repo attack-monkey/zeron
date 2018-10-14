@@ -106,7 +106,7 @@ function run() {
     component(
         'entry' /* load into #entry node */,
         `
-        <h1>${getState('greeting')}<h2>
+        <h1>${getState('greeting')}</h1>
         <!-- data-on binds events to the onRender methods below, passing in data-params -->
         <button data-on="{'click': 'changeGreeting' }" data-params="{'newGreeting': 'Yo Earth!!'}">
             push me
