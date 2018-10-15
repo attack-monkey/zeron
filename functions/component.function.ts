@@ -40,14 +40,14 @@ function run(componentSocketId, template, options?: any){
     pushStateRoutes(componentSocketId);
     pushStateTransitions(componentSocketId);
     // On (re)render - do the stuff
-    if (options && options.onRender) {
+    if (options && options.bind) {
         const nodeList = document.querySelectorAll(':scope #' + componentSocketId + ' [data-on]');
         forEach(nodeList, node => {
             const funcObj = parseDataOn(node);
             const params = getParams(node);
             Object.keys(funcObj).forEach(key => {
                 node.addEventListener(key, () => { 
-                    options.onRender[funcObj[key]](params);
+                    options.bind[funcObj[key]](params);
                 }, false);
             })
         })
