@@ -1,4 +1,4 @@
-import { setState, store, debug, onRouteChange, preLoadComponents, loadComponent } from 'zeron';
+import { setState, store, debug, onRouteChange, loadComponent } from 'zeron';
 import { preload } from './preload-components';
 
 preload();
@@ -11,10 +11,8 @@ async function run() {
     });
     store().maxLength(2);
     
-    setState({
-        todoList: {}
-    });
+    setState({});
 
     const viewPortComponent = await loadComponent('viewport-component');
-    onRouteChange(viewPortComponent.render);
+    viewPortComponent.render();
 }
