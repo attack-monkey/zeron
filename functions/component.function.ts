@@ -9,11 +9,12 @@ let shadowComponentMap = {};
 interface ComponentOptionsModel {
     onlyRunIf?: boolean,
     next?: () => any,
-    bind?: any
+    bind?: any,
+    children?: string[]
 }
 
 export function clearComponent(componentSocketId) {
-    shadowComponentMap[componentSocketId] = undefined;
+    delete shadowComponentMap[componentSocketId];
 }
 
 export function component(componentSocketId, template: string, options?: ComponentOptionsModel) {
@@ -24,6 +25,10 @@ export function component(componentSocketId, template: string, options?: Compone
                 // Either there is no prior shadowComponent set OR the template doesn't match the existing shadowComponent
                 // So save the new shadowComponent and inject the template into the componentSocket
                 shadowComponentMap[componentSocketId] = template;
+                // Need to remove the child shadow components (if any)
+                if (options.children) {
+                    options.children.forEach(child => delete shadowComponentMap[child]);
+                }
                 run(componentSocketId, template, options);
             }
         }
@@ -40,14 +45,15 @@ function run(componentSocketId, template, options?: any){
     pushStateRoutes(componentSocketId);
     pushStateTransitions(componentSocketId);
     // On (re)render - do the stuff
-    if (options && options.onRender) {
+    if (options && options.bind) {
         const nodeList = document.querySelectorAll(':scope #' + componentSocketId + ' [data-on]');
         forEach(nodeList, node => {
             const funcObj = parseDataOn(node);
             const params = getParams(node);
             Object.keys(funcObj).forEach(key => {
-                node.addEventListener(key, () => { 
-                    options.onRender[funcObj[key]](params);
+                node.addEventListener(key, (e) => {
+                    const paramsWithEvent = Object.assign({}, params, {event: e});
+                    options.bind[funcObj[key]](paramsWithEvent);
                 }, false);
             })
         })
