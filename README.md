@@ -1,4 +1,4 @@
-# Zeron
+# Zeron3 [beta]
 A lightweight functional frontend framework
 
 - Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
