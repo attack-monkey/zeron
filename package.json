@@ -2,11 +2,11 @@
   "_from": "zeron@3.0.2",
   "_id": "zeron@3.0.2",
   "_inBundle": false,
-  "_integrity": "sha512-HNuipInZ2AmZPq+0pjcf1zTqynsOkCINMdxZhLvN88M1KoP5mA+ppBYwWD4/wCF4g90RFySfuzLRANjJhk0gWA==",
+  "_integrity": "sha512-ocwrydQLXvGAlqt4yFvs7eAhC/MUtuNCBD96Y0VNUXZYM+NRAS7Ez0Vgu3iqKqK1Ap6sP6oBkYNqaWuIaPtV2g==",
   "_location": "/zeron",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
     "raw": "zeron@3.0.2",
     "name": "zeron",

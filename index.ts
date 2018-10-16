@@ -15,6 +15,7 @@ import { on } from "./functions/on.function";
 import { onRouteChange } from "./functions/on-route-change.function";
 import { pushStateTransitions } from "./functions/push-state-transitions.function";
 import { transitions } from "./functions/transitions.function";
+import { loadComponent, preLoadComponents } from "./functions/load-components.functions";
 
 export const zeron = {
     component: component,
@@ -38,9 +39,12 @@ export const zeron = {
     on: on,
     onRouteChange: onRouteChange,
     transitions: transitions,
-    clearComponent: clearComponent
+    clearComponent: clearComponent,
+    loadComponent: loadComponent,
+    preLoadComponents: preLoadComponents
 }
 
+export * from './functions/load-components.functions';
 export * from './functions/component.function';
 export * from './functions/get-unique-id.function';
 export * from './functions/store.function';
