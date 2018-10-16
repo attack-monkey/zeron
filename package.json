@@ -1,6 +1,6 @@
 {
-  "_from": "zeron@3.0.2",
-  "_id": "zeron@3.0.2",
+  "_from": "zeron@3.0.3",
+  "_id": "zeron@3.0.3",
   "_inBundle": false,
   "_integrity": "sha512-ocwrydQLXvGAlqt4yFvs7eAhC/MUtuNCBD96Y0VNUXZYM+NRAS7Ez0Vgu3iqKqK1Ap6sP6oBkYNqaWuIaPtV2g==",
   "_location": "/zeron",
@@ -8,12 +8,12 @@
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "zeron@3.0.2",
+    "raw": "zeron@3.0.3",
     "name": "zeron",
     "escapedName": "zeron",
-    "rawSpec": "3.0.2",
+    "rawSpec": "3.0.3",
     "saveSpec": null,
-    "fetchSpec": "3.0.2"
+    "fetchSpec": "3.0.3"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/zeron/-/zeron-3.0.0.tgz",
   "_shasum": "be347c9f3621e7e70159607ea6da27566cb1dc0c",
-  "_spec": "zeron@3.0.2",
+  "_spec": "zeron@3.0.3",
   "_where": "/Users/benjaminclark/Sites/zeron-seed",
   "author": {
     "name": "attack-monkey",
@@ -51,5 +51,5 @@
   "scripts": {
     "test": "test"
   },
-  "version": "3.0.2"
+  "version": "3.0.3"
 }
