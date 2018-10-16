@@ -115,7 +115,7 @@ function run() {
         <button id="anotherid" data-on="{'click': 'changeGreeting' }" data-params="{'newGreeting': 'hello world'}">
             push me
         </button>`,
-        { onRender: { changeGreeting: changeGreeting } }
+        { bind: { changeGreeting: changeGreeting } }
     );
 
     function changeGreeting(params) {
