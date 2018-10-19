@@ -7,12 +7,14 @@ preload();
 run();
 async function run() {
     debug().on({
-        onlyLogCurrentState: true
+        autoLog: false /* can als be ... 'fullStore' | 'currentState'*/
     });
     store().maxLength(2);
     
-    setState({});
+    setState({
+        todoList: {}
+    });
 
     const viewPortComponent = await loadComponent('viewport-component');
-    viewPortComponent.render();
+    onRouteChange(viewPortComponent.render);
 }

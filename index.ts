@@ -16,6 +16,8 @@ import { onRouteChange } from "./functions/on-route-change.function";
 import { pushStateTransitions } from "./functions/push-state-transitions.function";
 import { transitions } from "./functions/transitions.function";
 import { loadComponent, preLoadComponents } from "./functions/load-components.functions";
+import { mapJoin } from "./functions/mapJoin.function";
+import { stringify } from "./functions/stringify.function";
 
 export const zeron = {
     component: component,
@@ -41,9 +43,13 @@ export const zeron = {
     transitions: transitions,
     clearComponent: clearComponent,
     loadComponent: loadComponent,
-    preLoadComponents: preLoadComponents
+    preLoadComponents: preLoadComponents,
+    mapJoin: mapJoin,
+    stringify: stringify
 }
 
+export * from './functions/stringify.function';
+export * from './functions/mapJoin.function';
 export * from './functions/load-components.functions';
 export * from './functions/component.function';
 export * from './functions/get-unique-id.function';

@@ -1,12 +1,12 @@
-# Zeron3 [beta]
-
-Welcome to Zeron, a lightweight functional / reactive application framework for typescript
+# Zeron
+A lightweight functional frontend framework
 
 - Zeron omits any propietry html templating - in favour of pure javaScript `${templating}`
 - Zeron encourages functional programming over oo to reduce state related complexity
 - Zeron utilizes *shadow components* for a smarter, faster DOM.
 - State is only stored in one place
 - State is immutable - so rather than mutating state, any new state is put on top of an 'undo stack'
+- Automatic code-splitting
 
 ## Get started
 

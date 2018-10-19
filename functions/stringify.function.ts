@@ -1,0 +1,1 @@
+export function stringify(obj): string { return JSON.stringify(obj).replace(/\"/g,"'"); }

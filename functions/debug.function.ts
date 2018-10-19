@@ -1,12 +1,10 @@
 interface OptionsModel {
-    logFullStore?: boolean;
-    onlyLogCurrentState?: boolean;
+    autoLog: 'fullStore' | 'currentState' | false
 }
 
 let debuggerx = false;
-let optionsStore = {
-    logFullStore: true,
-    onlyLogCurrentState: false,
+let optionsStore: OptionsModel = {
+    autoLog: false
 };
 
 export function debug() {
@@ -14,9 +12,14 @@ export function debug() {
         log: (...args) => debuggerx ? console.log(...args) : undefined,
         on: (options?: OptionsModel) => {
 					console.log('Debugger is On');
-                    debuggerx = true
-                    optionsStore.logFullStore = islogFullStoreOn(options);
-                    optionsStore.onlyLogCurrentState = islogCurrentStateOn(options);
+                    debuggerx = true;
+                    if (
+                        options && 
+                        options.autoLog && 
+                        ['fullStore', 'currentState', false].some(option => options.autoLog === option)
+                    ) {
+                        optionsStore.autoLog = options.autoLog;
+                    }
                 },
         off: () => {
             console.log('Debugger is Off');
@@ -25,14 +28,4 @@ export function debug() {
         isOn: () => debuggerx,
         getOptions: () => optionsStore
     }
-}
-
-function islogFullStoreOn(options) {
-    if (!options) { return; }
-    return options.logFullStore || ( !options.onlyLogCurrentState && !options.onlyLogCurrentSubstate );
-}
-
-function islogCurrentStateOn(options) {
-    if (!options) { return; }
-    return options.onlyLogCurrentState;
 }
