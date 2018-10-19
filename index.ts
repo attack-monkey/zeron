@@ -18,6 +18,7 @@ import { transitions } from "./functions/transitions.function";
 import { loadComponent, preLoadComponents } from "./functions/load-components.functions";
 import { mapJoin } from "./functions/mapJoin.function";
 import { stringify } from "./functions/stringify.function";
+import { arrayToMap } from "./functions/array-to-map.function";
 
 export const zeron = {
     component: component,
@@ -44,9 +45,11 @@ export const zeron = {
     loadComponent: loadComponent,
     preLoadComponents: preLoadComponents,
     mapJoin: mapJoin,
+    arrayToMap: arrayToMap,
     stringify: stringify
 }
 
+export * from './functions/array-to-map.function';
 export * from './functions/stringify.function';
 export * from './functions/mapJoin.function';
 export * from './functions/load-components.functions';
