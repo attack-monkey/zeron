@@ -1,6 +1,6 @@
 {
   "_from": "zeron",
-  "_id": "zeron@3.2.0",
+  "_id": "zeron@3.2.1",
   "_inBundle": false,
   "_integrity": "sha512-ocwrydQLXvGAlqt4yFvs7eAhC/MUtuNCBD96Y0VNUXZYM+NRAS7Ez0Vgu3iqKqK1Ap6sP6oBkYNqaWuIaPtV2g==",
   "_location": "/zeron",
@@ -19,7 +19,7 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/zeron/-/zeron-3.2.0.tgz",
+  "_resolved": "https://registry.npmjs.org/zeron/-/zeron-3.2.1.tgz",
   "_shasum": "3ce577a0ac84696e0ef9771542962b390a60f621",
   "_spec": "zeron",
   "_where": "C:\\Users\\ben.clark\\Documents\\dummy\\todo",
@@ -51,5 +51,5 @@
   "scripts": {
     "test": "test"
   },
-  "version": "3.2.0"
+  "version": "3.2.1"
 }
