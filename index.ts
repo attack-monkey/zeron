@@ -23,7 +23,6 @@ export const zeron = {
     component: component,
     genId: genId,
     store: store,
-    state: state,
     getState: getState,
     setState: setState,
     updateState: updateState,
