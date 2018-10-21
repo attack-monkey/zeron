@@ -1,14 +1,6 @@
-import { component, urlSegments, loadComponent } from 'zeron';
+import { component } from 'zeron';
 import { viewportTemplate } from './viewport.template';
 
 export function render() {
-    component('viewport-component', viewportTemplate(), {
-        children: ['home-component'],
-        next: () => next()
-    });
+    component('viewport-component', viewportTemplate());
 }
-
-async function next() {
-    const homeComponent = await loadComponent('home-component');
-    homeComponent.render();
-};
