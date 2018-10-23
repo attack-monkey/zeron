@@ -11,9 +11,7 @@ async function run() {
     });
     store().maxLength(2);
     
-    setState({
-        todoList: {}
-    });
+    setState({});
 
     const viewPortComponent = await loadComponent('viewport-component');
     onRouteChange(viewPortComponent.render);

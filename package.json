@@ -2,7 +2,7 @@
   "_from": "zeron",
   "_id": "zeron@3.2.2",
   "_inBundle": false,
-  "_integrity": "sha512-ocwrydQLXvGAlqt4yFvs7eAhC/MUtuNCBD96Y0VNUXZYM+NRAS7Ez0Vgu3iqKqK1Ap6sP6oBkYNqaWuIaPtV2g==",
+  "_integrity": "sha512-qUCjJJn9d0jG5wfC+QN0SlZfU6+R5XB+HQQRQYKonEfD+wbN+GKsELYi+BkZeOxWF00T+32js7orKPI15DrcOQ==",
   "_location": "/zeron",
   "_phantomChildren": {},
   "_requested": {
@@ -20,9 +20,9 @@
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/zeron/-/zeron-3.2.2.tgz",
-  "_shasum": "3ce577a0ac84696e0ef9771542962b390a60f621",
+  "_shasum": "e7bbd23510c8512d9bd702d892d19cb143c1cbdb",
   "_spec": "zeron",
-  "_where": "C:\\Users\\ben.clark\\Documents\\dummy\\todo",
+  "_where": "/Users/benjaminclark/Sites/zeron-composable-components",
   "author": {
     "name": "attack-monkey",
     "url": "https://github.com/attack-monkey"
