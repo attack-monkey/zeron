@@ -1,7 +1,4 @@
-# Zeron
-A lightweight functional frontend framework
-
-## Important
+## Important!!
 
 Work on Zeron has stopped.  
 Instead we reccomend *hyperapp* as a functional front-end framework.
